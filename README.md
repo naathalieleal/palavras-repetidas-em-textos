@@ -2,7 +2,7 @@
 
 Projeto desenvolvido durante curso de JavaScript com Node.js.
 
-O script lê um arquivo de texto e identifica palavras duplicadas, ignorando caracteres especiais e palavras com menos de 3 caracteres (como: "de", "do", "e").
+O script lê arquivos .txt e identifica palavras duplicadas, ignorando caracteres especiais e palavras com menos de 3 caracteres.
 
 🚀 Tecnologias utilizadas
 JavaScript
@@ -11,19 +11,41 @@ Módulo nativo fs
 
 ⚙️ Como funciona
 Lê um arquivo .txt via terminal
+Trata erros de leitura de arquivo (ex: arquivo não encontrado)
 Separa o texto em parágrafos
 Divide em palavras
 Remove caracteres especiais
 Conta a frequência de cada palavra
 Retorna um objeto com a contagem
 
+📁 Estrutura do projeto
+arquivos/
+  texto-aprendizado.txt
+  texto-kanban.txt
+  texto-web.txt
+
+src/
+  index.js
+
+README.md
+
 📦 Como executar o projeto
-Clone o repositório:
+1. Clone o repositório:
 git clone https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git
-Acesse a pasta do projeto:
+
+2. Acesse a pasta do projeto:
 cd SEU-REPOSITORIO
-Execute o script passando o caminho do arquivo:
+
+3. Execute o script passando o caminho do arquivo:
 node index.js ./arquivos/texto.txt
+
+➕ Como adicionar novos textos
+1. Adicione um novo arquivo .txt dentro da pasta arquivos/
+Exemplo:
+arquivos/novo-texto.txt
+
+2. Execute o script com o novo arquivo:
+node src/index.js ./arquivos/novo-texto.txt
 
 📌 Exemplo de saída
 { palavra: 3, texto: 2, exemplo: 1 }
