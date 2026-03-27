@@ -16,7 +16,24 @@ fs.readFile(link, 'utf-8', (erro, texto) => {
   } 
 })
 
-async function criaESalvaArquivo(listaPalavras, endereco) {
+function criaESalvaArquivo(listaPalavras, endereco) {
+    const arquivoNovo = `${endereco}/resultado.txt`;
+    const textoPalavras = JSON.stringify(listaPalavras);
+    
+    fs.promises.writeFile(arquivoNovo, textoPalavras)
+        .then(() => {
+           console.log('Arquivo criado'); 
+        })
+        .catch((erro) => {
+            throw erro
+        })
+        .finally(() => console.log('operação finalizada'))
+        
+}
+
+//Outra forma de executar o código de forma assíncrona, utilizando async e await, com try e catch
+//Essa sintaxe é mais simplificada: se tirar async e await funciona normalmente. Leitura mais fluída que com o "then", e mais nova também
+/* async function criaESalvaArquivo(listaPalavras, endereco) {
     const arquivoNovo = `${endereco}/resultado.txt`;
     const textoPalavras = JSON.stringify(listaPalavras);
     try {
@@ -25,4 +42,4 @@ async function criaESalvaArquivo(listaPalavras, endereco) {
     } catch(erro) {
         throw erro;
     }
-}
+} */
