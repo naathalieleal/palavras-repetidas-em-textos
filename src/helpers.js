@@ -4,11 +4,17 @@ function filtraOcorrencias(paragrafo) {
 
 function montaSaidaArquivo(listaPalavras) {
     let textoFinal = '';
+    let paragrafosSemDuplicadas = [];
+   
     listaPalavras.forEach((paragrafo, indice) => {
         const duplicadas = filtraOcorrencias(paragrafo).join(', ');
-        textoFinal += `palavras duplicadas no parágrafo ${indice + 1}: ${duplicadas} \n`
-    })
 
+        if(duplicadas.length > 0 ) {
+            textoFinal += `palavras duplicadas no parágrafo ${indice + 1}: ${duplicadas} \n`
+        } else {
+            paragrafosSemDuplicadas.push(indice + 1);
+        }
+    })
     return textoFinal;
 }
 

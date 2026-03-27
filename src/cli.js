@@ -13,7 +13,7 @@ fs.readFile(link, 'utf-8', (erro, texto) => {
     const resultado = contaPalavras(texto);
     criaESalvaArquivo(resultado, endereco);
   } catch(erro) {
-    console.log(trataErros(erro));
+    console.log(erro);
   } 
 })
 
