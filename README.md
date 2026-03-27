@@ -22,8 +22,8 @@ O script lê arquivos `.txt` e identifica a frequência das palavras, ignorando 
 * Divide em palavras
 * Remove caracteres especiais
 * Conta a frequência de cada palavra
-* Retorna um objeto com a contagem
-* Gera automaticamente um arquivo `resultado.txt` com a contagem
+* Identifica palavras duplicadas por parágrafo
+* Gera automaticamente um arquivo `resultado.txt` com a saída formatada
 
 ---
 
@@ -41,6 +41,7 @@ resultados/
 src/
   cli.js
   index.js
+  helpers.js
   erros/
     funcoesErro.js
 
@@ -72,15 +73,13 @@ Onde:
 
 ## 📂 Saída
 
-O arquivo `resultado.txt` será gerado automaticamente na pasta informada, contendo a contagem das palavras em formato JSON.
+O arquivo `resultado.txt` será gerado automaticamente na pasta informada, contendo as palavras duplicadas organizadas por parágrafo.
 
-Exemplo de saída (JSON): 
-```md
-```json
-{
-  "javascript": 3,
-  "node": 2
-}
+Exemplo de saída:
+
+```txt
+palavras duplicadas no parágrafo 1: javascript, node
+palavras duplicadas no parágrafo 2: projeto
 ```
 
 ---
