@@ -53,11 +53,16 @@ README.md
 
 ## 📦 Como executar o projeto
 
-1. Execute o script passando o arquivo de entrada e a pasta de saída:
+1. Execute o script passando o arquivo de entrada e a pasta de saída, por exemplo:
 
 ```bash
-node src/cli.js arquivos/texto-web.txt ./resultados/
+node src/cli.js -t ./arquivos/texto-web.txt -d ./resultados
 ```
+Onde:
+
+-t ou --texto: caminho do arquivo de entrada (.txt)
+-d ou --destino: pasta onde o resultado será salvo
+
 
 2. O resultado será salvo automaticamente em:
 ```bash
